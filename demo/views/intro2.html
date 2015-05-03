@@ -1,0 +1,26 @@
+<html>
+<head>
+
+  <script src="../../bower_components/angular/angular.js"></script>
+  <script src="../demo.js"></script>
+  <script src="../controllers/demoCtr2.js"></script>
+</head>
+<body>
+<div ng-app="demo">
+  <div ng-controller="demoCtr2">
+    <h1>Dallas Angular Super Heroes</h1>
+
+    <h2>{{page.title}}</h2>
+    <div>
+      title: <field2 name='page.title'></field2>
+    </div>
+    <div>
+      city: <field2 name='page.city'></field2>
+    </div>
+
+    <br/>
+    Hope you like this {{page.title}} in {{page.city}}
+  </div>
+</div>
+</body>
+</html>

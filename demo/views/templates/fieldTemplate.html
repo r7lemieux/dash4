@@ -1,0 +1,5 @@
+<div ng-click="edit=true" ng-mouseleave="edit=false">
+  <span ng-if="!edit">{{field.value}}</span>
+  <!--suppress HtmlFormInputWithoutLabel -->
+  <input id={{field.name}} ng-if="edit" ng-model="field.value"/>
+</div>

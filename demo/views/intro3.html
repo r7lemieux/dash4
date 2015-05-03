@@ -1,0 +1,29 @@
+<html>
+<head>
+
+  <script src="../../bower_components/angular/angular.js"></script>
+  <script src="../../bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+  <script src="../../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="../../bower_components/angular-resource/angular-resource.js"></script>
+
+  <script src="../demo.js"></script>
+  <script src="../controllers/demoCtr2.js"></script>
+
+</head>
+<body>
+<div ng-app="demo">
+  <div ng-controller="demoCtr2">
+    <h1>Dallas Angular Super Heroes</h1>
+
+    <h2>{{page.title}} </h2>
+
+    <div>
+      <div><label for="title">title:</label><input id="title" ng-model="page.title"/></div>
+    </div>
+
+    <br/>
+    Hope you like this {{title}}
+  </div>
+</div>
+</body>
+</html>
