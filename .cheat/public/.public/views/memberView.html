@@ -1,0 +1,33 @@
+<div ng-controller="MemberCtr" ng-init="initMember()" class="objView ng-scope">
+
+  <h1><a href="{{member.link}}">{{member.name}}</a></h1>
+
+  <form>
+    <img ng-src="{{member.photo.photo_link}}"/>
+    <section class="objValues">
+      <div><span class="label">city</span><span class="value">{{member.city}}</span></div>
+      <div><span class="label">country</span><span field name="member.country" class="value">{{member.country}}</span></div>
+      <div><span class="label">state</span><span class="value">{{member.state}}</span></div>
+      <div><span class="label">joined</span><span class="value">{{member.joined | date: 'yyyy-MM-dd hh:mm'}}</span></div>
+      <div><span class="label">state</span><field name="member.state" class="value"></field></div>
+      <div><span class="label">topics</span><span class="value">
+      <span ng-repeat="topic in member.topics">{{topic.name}}, </span></span>
+      </div>
+
+    </section>
+    <div class="buttonBar">
+      <input class="btn btn-default" type="submit" ng-click="update(member)" value="Submit"/>
+    </div>
+  </form>
+
+  <!--<section class="buttonBar">-->
+  <!--<button type="button" ng-click="save()" class="btn btn-default">-->
+  <!--<i class="glyphicon glyphicon-save"></i>-->
+  <!--<span>Save</span>-->
+  <!--</button>-->
+  <!--<button type="button" ng-click="delete()" class="btn btn-default">-->
+  <!--<i class="glyphicon glyphicon-remove"></i>-->
+  <!--<span>Delete</span>-->
+  <!--</button>-->
+  <!--</section>-->
+</div>
