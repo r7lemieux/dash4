@@ -2,20 +2,8 @@
 
     <h1>Members </h1>
 
-    <div class="filter">
-        <span>filter</span>
-        <label for="fieldNames">field name</label>
-        <select id="fieldNames" ng-options="fieldName for fieldName in filter.fieldNames"
-                ng-model="filter.fieldName"></select>
-        <label for="fieldValues">field value</label>
-        <select id="fieldValues" ng-options="fieldValue for fieldValue in filter.fieldValues"
-                ng-model="filter.fieldValue"></select>
-    </div>
-
     <ul class="objList" ng-repeat="member in members">
         <li>
-            <!--<a ui-sref="member({memberId:member.id})">
-            <img ng-src="{{member.photo.thumb_link}}" height="40"/></a>-->
             <a ui-sref="member({memberId:member.id})">{{member.name}}</a>
         </li>
     </ul>
