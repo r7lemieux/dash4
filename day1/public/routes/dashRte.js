@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('dash').config( function($stateProvider, $urlRouterProvider) {
+angular.module('dash').config(function ($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise("/lost");
 
@@ -22,6 +22,6 @@ angular.module('dash').config( function($stateProvider, $urlRouterProvider) {
             url: '/members/:memberId',
             templateUrl: 'views/memberView.html'
         })
-
+        ;
 
 });

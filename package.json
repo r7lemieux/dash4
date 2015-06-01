@@ -16,5 +16,12 @@
     "debug": "~2.0.0",
     "jade": "~1.6.0",
     "ws": "^0.5.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-livereload": "^3.8.0",
+    "gulp-notify": "latest",
+    "gulp-util": "latest",
+      "gulp-nodemon":"latest"
   }
 }

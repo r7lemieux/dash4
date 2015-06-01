@@ -2,9 +2,11 @@
 
 angular.module('dash').factory('Member', ['$resource',
   function ($resource) {
-    return $resource('member/:memberId', {
-        memberId: '@_id'
-      }, {
+
+    return $resource(
+        'member/:memberId',
+        {memberId: '@_id'},
+        {
         list: {
           method: 'GET',
           url: 'members',

@@ -11,9 +11,8 @@ var
     filename        = 'data/meetupMembers.json',
     meetupServer    = {
       host: 'api.meetup.com',
-      path: '/2/members?sig_id=' + meetupSigId +
-      '&order=name&group_urlname=DallasAngularJS&sig=' + meetupSig +
-      '&offset=0&format=json&page=200'
+      path: '/2/members?offset=0&format=json&group_urlname=DallasAngularJS&photo-host=public&page=800&order=name&sig_id=' + meetupSigId +
+      '&sig=' + meetupSig
     },
 
     MeetupCbFactory = function (cb) {
@@ -39,6 +38,7 @@ exports.persistMembers = function () {
 exports.fetchMembers = function (cb) {
   var srv          = this;
   var httpCallback = new MeetupCbFactory(function (dataText) {
+      console.log('340  dataText ' + JSON.stringify(dataText));
     if (dataText && dataText.substring(0, 12) !== '{"details":"') {
       fs.writeFileSync(filename, dataText);
     } else {

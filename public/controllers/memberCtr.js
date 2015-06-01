@@ -14,6 +14,7 @@ angular.module('dash').controller('MemberCtr', function ($scope, $stateParams, M
                 $scope.member = member;
             })
         };
+
     }
 )
 
