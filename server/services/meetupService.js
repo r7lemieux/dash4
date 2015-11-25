@@ -11,10 +11,11 @@ var
     filename        = 'data/meetupMembers.json',
     meetupServer    = {
       host: 'api.meetup.com',
-      path: '/2/members?offset=0&format=json&group_urlname=DallasAngularJS&photo-host=public&page=800&order=name&sig_id=' + meetupSigId +
-      '&sig=' + meetupSig
+      path: ''
+      //path: '/2/members?sig_id=8970895&order=name&group_urlname=DallasAngularJS&sig=7273be2514c75c224229d3e76754de14c550b96d&offset=0&format=json&page=200&offset=1'
+      //path: '/2/members?offset=0&format=json&group_urlname=DallasAngularJS&photo-host=public&page=800&order=name&sig_id=' + meetupSigId +
+      //'&sig=' + meetupSig
     },
-
     MeetupCbFactory = function (cb) {
       return function (response) {
         var str = '';

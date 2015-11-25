@@ -40,6 +40,9 @@
 .listPage .filter label {
     margin: 0 10px;
 }
+.header-filtered {
+    color: #292;
+}
 /*.buttonBar {*/
     /*margin: 20px 0;*/
     /*display: inline-block;*/

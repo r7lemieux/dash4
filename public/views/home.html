@@ -1,5 +1,20 @@
-<div ng-controller="MemberCtr">
+<div ng-controller="HomeCtr" ng-init="val = 6">
 
-  <h2> {{welcomeText}} </h2>
+  <h2> ddd{{welcomeText}} </h2>
+Aaaa
 
+ <h3> path: {{path()}}
+<br/>
+ val: {{val | number : 2}}
+ <div>
+     The value is {{val}}. <span ng-bind="val"></span>
+ </div>
+     <div>
+         <input ng-model="val"/>
+     </div>
+ </h3>
+    <h3>
+
+        <dir1> SEE </dir1>
+    </h3>
 </div>

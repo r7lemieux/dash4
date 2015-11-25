@@ -1,12 +1,12 @@
-<div ng-controller="MemberCtr" ng-init="initMember()" class="objView ng-scope">
+<div ng-controller="MemberCtr" ng-init="initMember()" class="objView ng-scope memberPage">
 
   <h1><a href="{{member.link}}">{{member.name}}</a></h1>
 
   <form>
     <img ng-src="{{member.photo.photo_link}}"/>
     <section class="objValues">
-      <div><span class="label">city</span><span class="value">{{member.city}}</span></div>
-      <div><span class="label">country</span><span field name="member.country" class="value">{{member.country}}</span></div>
+      <div ><span class="label">city</span><span class="value" ng-bind="member.city"></span></div>
+      <div class="field-country"><span class="label">country</span><span field name="member.country" class="value">{{member.country}}</span></div>
       <div><span class="label">state</span><span class="value">{{member.state}}</span></div>
       <div><span class="label">joined</span><span class="value">{{member.joined | date: 'yyyy-MM-dd hh:mm'}}</span></div>
       <div><span class="label">state</span><field name="member.state" class="value"></field></div>
