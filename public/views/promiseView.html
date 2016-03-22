@@ -1,0 +1,31 @@
+<dashpromise memberid="11735614">
+    <div ng-init="initctr.member()" class="objView ng-scope ctr.memberPage">
+
+        <h1><a href="{{ctr.member.link}}">AAAV {{ctr.member.name}} ctr {{ctr.title}} vm {{vm.title}} memberId {{vm.memberid}}</a></h1>
+
+        <form>
+            <img ng-src="{{ctr.member.photo.photo_link}}"/>
+            <section class="objValues">
+                <div><span class="label">city</span><span class="value" ng-bind="ctr.member.city"></span></div>
+                <div class="field-country"><span class="label">country</span><span field name="ctr.member.country"
+                                                                                   class="value">{{ctr.member.country}}</span>
+                </div>
+                <div><span class="label">state</span><span class="value">{{ctr.member.state}}</span></div>
+                <div><span class="label">joined</span><span class="value">{{ctr.member.joined | date: 'yyyy-MM-dd hh:mm'}}</span>
+                </div>
+                <div><span class="label">state</span>
+                    <field name="ctr.member.state" class="value"></field>
+                </div>
+                <div><span class="label">topics</span><span class="value">
+                <span ng-repeat="topic in ctr.member.topics">{{topic.name}}, </span></span>
+                </div>
+                <div><span class="label">friends</span><span class="value">
+                <span ng-repeat="friend in ctr.member.friends">{{friend}}, </span></span>
+                </div>
+            </section>
+            <div class="buttonBar">
+                <input class="btn btn-default" type="submit" ng-click="update(ctr.member)" value="Submit"/>
+            </div>
+        </form>
+    </div>
+</dashpromise>

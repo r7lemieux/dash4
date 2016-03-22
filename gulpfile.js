@@ -1,4 +1,4 @@
-﻿var _       = require('lodash'),
+﻿﻿var _       = require('lodash'),
     del     = require('del'),
     gulp    = require('gulp'),
     gutil   = require('gulp-util'),
