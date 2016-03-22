@@ -1,0 +1,23 @@
+<div ng-controller="MapCtr as ctr" ng-init="initMember()" class="objView ng-scope memberPage">
+
+<h1>Google Map</h1>
+  ab
+ <section>
+   <div id="map" style="height:100%"></div>
+ </section>
+
+<script type="text/javascript">
+
+  var map;
+  function initMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: 32.7, lng: -96.9},
+      zoom: 10
+    });
+  }
+
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZ-3kThXzx_c1IJFnN3UBEB4UFHCzDOZE&callback={{ctr.initMap}}">
+</script>
+</div>

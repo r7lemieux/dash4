@@ -1,17 +1,35 @@
-<html ng-app="dash">
+<html>
 <head>
   <title>DASH</title>
+  <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico" />`
   <link rel="stylesheet" href="/assets/css/dash.css">
   <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
-  <link rel="styleSheet" href="/bower_components/angular-ui-grid/ui-grid.css"/>
+  <link rel="styleSheet" href="/bower_components/angular-ui-grid/ui-grid.css"/>  <!-- build:css styles/lib.css -->
+
+  <!-- bower:css -->
+  <link rel="stylesheet" href="../../bower_components/angular-ui-grid/ui-grid.css" />
+  <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css styles/vendor.css -->
+  <!-- inject:vendor:css -->
+  <!-- endinject-->
+  <!-- endbuild -->
+  <!-- build:css styles/app.css-->
+  <!-- inject:app:css -->
+  <link rel="stylesheet" href="assets/css/dash.css">
+  <!-- endinject -->
+  <!-- endbuild -->
+
 </head>
 <body>
 
-<div ng-controller="HomeCtr" class="mainPage">
+<div class="mainPage">
   <section class="topMenu">
     <span><a ui-sref="home" href="#/">Home</a></span>
     <span><a ui-sref="member list" href="#/memberList">List</a></span>
     <span><a ui-sref="member grid" href="#/memberGrid">Grid</a></span>
+    <!--<span><a ui-sref="map">Map</a></span>-->
   </section>
   <h1>Dallas Angular SuperHeroes</h1>
   <section class="intro">
@@ -19,20 +37,53 @@
       AngularJS framework.
     </div>
   </section>
-  
+
   <!-- uiView:  -->
   <section ui-view="">
   </section>
 </div>
 
-<script src="/bower_components/jquery/dist/jquery.js"></script>
-<script src="/bower_components/angular/angular.js"></script>
-<script src="/bower_components/angular-resource/angular-resource.js"></script>
-<script src="/bower_components/angular-route/angular-route.js"></script>
-<script src="/bower_components/angular-ui-grid/ui-grid.js"></script>
-<script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-<script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
-<script src="/bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+<!-- build:js js/lib.js -->
+<!-- bower:js -->
+<script src="../../bower_components/jquery/dist/jquery.js"></script>
+<script src="../../bower_components/angular/angular.js"></script>
+<script src="../../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="../../bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="../../bower_components/angular-mocks/angular-mocks.js"></script>
+<script src="../../bower_components/angular-pusher/angular-pusher.js"></script>
+<script src="../../bower_components/angular-resource/angular-resource.js"></script>
+<script src="../../bower_components/angular-route/angular-route.js"></script>
+<script src="../../bower_components/angular-ui-grid/ui-grid.js"></script>
+<script src="../../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="../../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="../../bower_components/lodash/lodash.js"></script>
+<script src="../../bower_components/ng-lodash/build/ng-lodash.js"></script>
+<script src="../../bower_components/rxjs/dist/rx.all.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+<!-- build:js js/vendor.js -->
+<!-- inject:vendor:js -->
+<!-- endinject-->
+<!-- endbuild -->
+<!-- build:js js/appdef.js -->
+<!-- endinject -->
+<!-- inject:appdef:js -->
+<script src="app.js"></script>
+<!-- endinject -->
+<!-- inject:app:js -->
+<script src="backend/memberBackEndIF.js"></script>
+<script src="controllers/memberListCtr.js"></script>
+<script src="services/listSrv.js"></script>
+<script src="controllers/home.component.js"></script>
+<script src="controllers/member.component.js"></script>
+<script src="controllers/memberCtr.js"></script>
+<script src="routes/dashRte.js"></script>
+<script src="services/memberBackEnd.js"></script>
+<script src="services/memberBackEndSimple.js"></script>
+<!-- endinject -->
+<!-- inject:app:ts -->
+<!-- endinject -->
+<!-- endbuild -->
 
 </body>
 </html>

@@ -1,0 +1,7 @@
+test/coverage/**
+packages/mor/server/cli/**
+gulp/*
+tools/scripts/*
+packages/core/circles/**
+packages/core/articles/**
+packages/core/admin/**

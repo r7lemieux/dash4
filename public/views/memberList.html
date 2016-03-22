@@ -1,6 +1,6 @@
-<div ng-controller="MemberCtr"  class="listPage">
+<div ng-controller="MemberListCtr as ctr"  class="listPage">
 
-    <h1>Members ({{members.length}})</h1>
+    <h1>Members ({{members.length}}) {{hi}}</h1>
 
     <ul class="objList" ng-repeat="member in members">
         <li>

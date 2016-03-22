@@ -1,0 +1,12 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "target": "es5",
+    "noImplicitAny": false
+  },
+  "exclude": [
+    "node_modules",
+    "bower_components",
+    "lib/libFileToExclude.d.ts"
+  ]
+}

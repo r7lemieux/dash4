@@ -1,0 +1,13 @@
+{
+  "name": "app",
+  "version": false,
+  "dependencies": {},
+  "ambientDependencies": {
+    "angular": "registry:dt/angular#1.5.0+20160317120654",
+    "angular-resource": "registry:dt/angular-resource#1.5.0+20160316171810",
+    "angular-ui-router": "registry:dt/angular-ui-router#1.1.5+20160317120654",
+    "es6-shim": "registry:dt/es6-shim#0.31.2+20160215162030",
+    "jasmine": "registry:dt/jasmine#2.2.0+20160308082659",
+    "jquery": "registry:dt/jquery#1.10.0+20160316155526"
+  }
+}

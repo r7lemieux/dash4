@@ -1,16 +1,16 @@
-<div ng-controller="HomeCtr" ng-init="val = 6">
+<div>
 
-  <h2> ddd{{welcomeText}} </h2>
+  <h2> ddd{{vm.welcomeText}} </h2>
 Aaaa
 
- <h3> path: {{path()}}
+ <h3> path: {{vm.path()}}
 <br/>
- val: {{val | number : 2}}
+ val: {{vm.val | number : 2}}
  <div>
-     The value is {{val}}. <span ng-bind="val"></span>
+     The value is {{vm.val}}. <span ng-bind="vm.val"></span>
  </div>
      <div>
-         <input ng-model="val"/>
+         <input ng-model="vm.val"/>
      </div>
  </h3>
     <h3>
