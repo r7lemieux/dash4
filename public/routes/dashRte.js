@@ -26,6 +26,13 @@ angular.module('dash').config( function($stateProvider, $urlRouterProvider) {
             url: '/memberGrid',
             templateUrl: 'views/memberGrid.html'
         })
-
+        .state('map', {
+            url: '/map',
+            templateUrl: 'views/map.html'
+        })
+        .state('promise member', {
+            url: '/promise/:memberId',
+            template:'<dashpromise><div ng-transclude>AAAAAA</div></dashpromise>'
+        })
 
 });

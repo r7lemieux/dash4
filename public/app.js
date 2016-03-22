@@ -1,5 +1,5 @@
 'use strict';
 
-angular.module('dash', ['ui.bootstrap', 'ui.router', 'ngResource', 'ui.grid', 'ui.grid.edit'])
-  .constant('$a', angular)
+angular.module('dash', ['ui.bootstrap', 'ui.router', 'ngResource', 'ui.grid', 'ui.grid.edit', 'ngLodash'])
+    .constant('$a', angular)
 ;

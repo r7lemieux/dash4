@@ -1,10 +1,10 @@
-<div ng-controller="MemberCtr"  class="listPage">
+<div ng-controller="MemberCtr as ctr"  class="listPage">
 
-    <h1>Members ({{members.length}})</h1>
+    <h1>Members ({{members.length}}) {{hi}}</h1>
 
     <ul class="objList" ng-repeat="member in members">
         <li>
-            <a ui-sref="member({memberId:member.id})">{{member.name}}</a>
+            <a ui-sref="promise member({memberId:member.id})">{{member.name}}</a>
         </li>
     </ul>
 

@@ -1,7 +1,6 @@
 'use strict';
 
-angular.module('dash').factory('Member',
-  function ($resource) {
+angular.module('dash').factory('Member', function ($resource) {
     return $resource('member/:memberId', {
         memberId: '@_id'
       }, {

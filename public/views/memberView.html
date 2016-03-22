@@ -1,9 +1,9 @@
-<div ng-controller="MemberCtr" ng-init="initMember()" class="objView ng-scope memberPage">
+<div ng-controller="MemberCtr as ctr" ng-init="initMember()" class="objView ng-scope memberPage">
 
   <h1><a href="{{member.link}}">{{member.name}}</a></h1>
-
+<h2 ng-transclude>transclude: </h2>
   <form>
-    <img ng-src="{{member.photo.photo_link}}"/>
+    <img ng-src="{{ctr.member.photo.photo_link}}"/>
     <section class="objValues">
       <div ><span class="label">city</span><span class="value" ng-bind="member.city"></span></div>
       <div class="field-country"><span class="label">country</span><span field name="member.country" class="value">{{member.country}}</span></div>

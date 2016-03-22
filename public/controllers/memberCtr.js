@@ -3,22 +3,23 @@
 angular.module('dash').controller('MemberCtr',
     function ($scope, $q, $stateParams, $location, uiGridConstants, Member, listSrv) {
 
-        $scope.title = 'Intro to Angular';
+        var ctr = $scope;
+        ctr.title = 'Intro to Angular';
 
         // ====
         // Init
         // ====
 
-        $scope.hi = 'hello';
+        ctr.hi = 'hello';
 
         var filterMembers = function (members) {
             var search = $location.search(),
                 membersReady = $q.defer();
             if (search) {
                 angular.forEach(search, function (val, key) {
-                    $scope.filter.fieldName = key;
-                    $scope.filter.fieldValue = val;
-                    members = listSrv.filter($scope.allMembers, search);
+                    ctr.filter.fieldName = key;
+                    ctr.filter.fieldValue = val;
+                    ctr.members = listSrv.filter(ctr.allMembers, search);
                 });
             }
             angular.forEach(members, function (member) {
@@ -28,13 +29,13 @@ angular.module('dash').controller('MemberCtr',
             return membersReady.promise;
         }
 
-        $scope.initMemberList1 = function () {
+        ctr.initMemberList1 = function () {
             $q.all([
                 Member.list().$promise
             ])
                 .then(function (results) {
                     var members = results[0];
-                    $scope.allMembers = members;
+                    ctr.allMembers = members;
                     return members
                 })
                 .then(function (members) {
@@ -45,15 +46,15 @@ angular.module('dash').controller('MemberCtr',
                 });
         };
 
-        $scope.initMemberList = function () {
+        ctr.initMemberList = function () {
             Member.list().$promise
                 //.then(filterMembers)
                 .then(function (members) {
-                    $scope.allMembers = $scope.members = members;
+                    ctr.allMembers = ctr.members = members;
                 });
         };
 
-        $scope.initMemberList();
+        ctr.initMemberList();
 
         var columnDefs = [
             {
@@ -107,24 +108,24 @@ angular.module('dash').controller('MemberCtr',
             }
         ];
 
-        $scope.initMemberGrid = function () {
-            $scope.initMemberList();
-            $scope.gridOptions = {
+        ctr.initMemberGrid = function () {
+            ctr.initMemberList();
+            ctr.gridOptions = {
                 columnDefs: columnDefs,
                 enableFiltering: true,
                 data: 'members'
             };
 
-            $scope.$on('uiGridEventEndCellEdit', function (event) {
+            ctr.$on('uiGridEventEndCellEdit', function (event) {
                 var member = event.targetScope.row.entity;
                 Member.update(member);
             });
         };
 
-        $scope.initMember = function () {
+        ctr.initMember = function () {
 
             Member.get({memberId: $stateParams.memberId}, function (member) {
-                $scope.member = member;
+                ctr.member = member;
             });
         };
 
@@ -132,49 +133,49 @@ angular.module('dash').controller('MemberCtr',
         // Filter
         // ======
 
-        $scope.filter = {
+        ctr.filter = {
             fieldName: null,
             fieldValue: null,
             fieldNames: ['name', 'city', 'state', 'id', 'status'],
             fieldValues: []
         };
 
-        $scope.filterMembers = function () {
+        ctr.filterMembers = function () {
             var filter = {};
-            filter[$scope.filter.fieldName] = $scope.filter.fieldValue;
+            filter[ctr.filter.fieldName] = ctr.filter.fieldValue;
             $location.search(filter);
-            $scope.members = listSrv.filter($scope.allMembers, filter);
+            ctr.members = listSrv.filter(ctr.allMembers, filter);
         };
 
-        $scope.$watch('filter.fieldName', function (newVal, oldVal) {
+        ctr.$watch('filter.fieldName', function (newVal, oldVal) {
             if (!newVal) {
-                $scope.filter.fieldValues = [];
+                ctr.filter.fieldValues = [];
             } else if (newVal !== oldVal) {
-                $scope.filter.fieldValues = listSrv.getUsedValues($scope.allMembers, newVal);
+                ctr.filter.fieldValues = listSrv.getUsedValues(ctr.allMembers, newVal);
             }
         });
 
-        $scope.$watch('filter.fieldValue', function (newVal, oldVal) {
+        ctr.$watch('filter.fieldValue', function (newVal, oldVal) {
             if (newVal != oldVal) {
                 if (newVal) {
-                    $scope.filterMembers();
+                    ctr.filterMembers();
                 } else {
-                    $scope.members = $scope.allMembers;
+                    ctr.members = ctr.allMembers;
                 }
             }
         });
 
-        $scope.buildCommonTopics = function () {
-            $scope.commonTopics = listSrv.buildCommonTopics($scope.members);
+        ctr.buildCommonTopics = function () {
+            ctr.commonTopics = listSrv.buildCommonTopics(ctr.members);
         };
 
         // ======
         // Modify
         // ======
 
-        $scope.update = function (member) {
+        ctr.update = function (member) {
             if (!member) {
-                member = $scope.member;
+                member = ctr.member;
             }
             Member.update(member, function (err, newMember) {
                 console.log('201 err ' + JSON.stringify(err));
