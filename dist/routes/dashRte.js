@@ -1,17 +1,22 @@
-// routing.$inject = ['$urlRouterProvider', '$locationProvider'];
-// export default function routing($stateProvider: IStateProvider , $urlRouterProvider: IUrlRouterProvider) {
 "use strict";
 angular.module('app').config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('lost');
     return $stateProvider
+        .state('first', {
+        url: '',
+        templateUrl: 'views/home.html'
+    })
         .state('home', {
         url: '/',
-        //             templateUrl: 'views/home.html'
+        // templateUrl: 'views/home.html'
         template: '<home></home>'
     })
         .state('lost', {
         url: '/lost',
-        templateUrl: 'views/lost.html'
+        templateUrl: 'views/lost.html',
+        controller: function ($scope, $state) {
+            $scope.state = $state;
+        }
     })
         .state('member list', {
         url: '/memberEnumeration',

@@ -1,14 +1,10 @@
 <html>
 <head>
   <title>DASH</title>
-  <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico" />`
-  <link rel="stylesheet" href="/assets/css/dash.css">
   <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
   <link rel="styleSheet" href="/bower_components/angular-ui-grid/ui-grid.css"/>  <!-- build:css styles/lib.css -->
-
   <!-- bower:css -->
   <link rel="stylesheet" href="../../bower_components/angular-ui-grid/ui-grid.css" />
-  <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.css" />
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css styles/vendor.css -->
@@ -26,9 +22,9 @@
 
 <div class="mainPage">
   <section class="topMenu">
-    <span><a ui-sref="home" href="#/">Home</a></span>
-    <span><a ui-sref="member list" href="#/memberList">List</a></span>
-    <span><a ui-sref="member grid" href="#/memberGrid">Grid</a></span>
+    <span><a ui-sref="home" >Home</a></span>
+    <span><a ui-sref="member list" >List</a></span>
+    <span><a ui-sref="member grid" >Grid</a></span>
     <!--<span><a ui-sref="map">Map</a></span>-->
   </section>
   <h1>Dallas Angular SuperHeroes</h1>
@@ -47,6 +43,7 @@
 <!-- bower:js -->
 <script src="../../bower_components/jquery/dist/jquery.js"></script>
 <script src="../../bower_components/angular/angular.js"></script>
+<script src="../../bower_components/angular-animate/angular-animate.js"></script>
 <script src="../../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 <script src="../../bower_components/angular-cookies/angular-cookies.js"></script>
 <script src="../../bower_components/angular-mocks/angular-mocks.js"></script>
@@ -72,7 +69,9 @@
 <!-- endinject -->
 <!-- inject:app:js -->
 <script src="backend/memberBackEndIF.js"></script>
+<script src="controllers/mapCtr.js"></script>
 <script src="controllers/memberListCtr.js"></script>
+<script src="controllers/promiseComponent.js"></script>
 <script src="services/listSrv.js"></script>
 <script src="controllers/home.component.js"></script>
 <script src="controllers/member.component.js"></script>

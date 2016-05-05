@@ -4,21 +4,24 @@
   <form>
     <img ng-src="{{vm.member.photo.photo_link}}"/>
     <section class="objValues">
-      <div><span class="label">city</span><span class="value" ng-bind="vm.member.city"></span></div>
-      <div class="field-country"><span class="label">country</span><span field name="vm.member.country"
-                                                                         class="value">{{vm.member.country}}</span>
-      </div>
-      <div><span class="label">state</span><span class="value">{{vm.member.state}}</span></div>
-      <div><span class="label">joined</span><span class="value">{{vm.member.joined | date: 'yyyy-MM-dd hh:mm'}}</span>
-      </div>
-      <div><span class="label">state</span>
-        <field name="vm.member.state" class="value"></field>
-      </div>
-      <div><span class="label">topics</span><span class="value">
+      <button type="button" class="btn btn-default" ng-click="vm.isCollapsed = !vm.isCollapsed">Toggle show details</button>
+      <div uib-collapse="vm.isCollapsed">
+        <div><span class="label">city</span><span class="value" ng-bind="vm.member.city"></span></div>
+        <div class="field-country"><span class="label">country</span><span field name="vm.member.country"
+                                                                           class="value">{{vm.member.country}}</span>
+        </div>
+        <div><span class="label">state</span><span class="value">{{vm.member.state}}</span></div>
+        <div><span class="label">joined</span><span class="value">{{vm.member.joined | date: 'yyyy-MM-dd hh:mm'}}</span>
+        </div>
+        <div><span class="label">state</span>
+          <field name="vm.member.state" class="value"></field>
+        </div>
+        <div><span class="label">topics</span><span class="value">
                 <span ng-repeat="topic in vm.member.topics">{{topic.name}}, </span></span>
-      </div>
-      <div><span class="label">friends</span><span class="value">
+        </div>
+        <div><span class="label">friends</span><span class="value">
                 <span ng-repeat="friend in vm.member.friends">{{friend}}, </span></span>
+        </div>
       </div>
     </section>
     <div class="buttonBar">

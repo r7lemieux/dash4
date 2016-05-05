@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('dash').component('dashpromise', {
+angular.module('app').component('dashpromise', {
     controllerAs: 'vm',
     controller: promiseMemberCtr,
     transclude: true,

@@ -3,8 +3,7 @@
 // <reference path="./controllers/memberCtr.ts" />
 // import * as MemberCtr from './controllers/memberCtr';
 // import * as angular from 'angular';
-angular.module('app', ['ui.bootstrap', 'ui.router', 'ngResource', 'ui.grid', 'ui.grid.edit', 'ngLodash']);
-// app.controller('MemberCtr', MemberCtr);
+angular.module('app', ['ngAnimate', 'ui.bootstrap', 'ui.router', 'ngResource', 'ui.grid', 'ui.grid.edit', 'ngLodash']);
 angular.element(document).ready(() => {
     angular.bootstrap(document, ['app']);
 });

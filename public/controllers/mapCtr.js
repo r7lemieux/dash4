@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('dash').controller('MapCtr', function ($scope, $location) {
+angular.module('app').controller('MapCtr', function ($scope, $location) {
 
         var map;
 
